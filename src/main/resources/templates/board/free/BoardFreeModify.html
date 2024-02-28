@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>수정페이지</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/header.css"/>
+</head>
+<body>
+<div th:replace="~{util/header :: header}"></div>
+<div class="layout">
+    <form th:action="@{/board/free/update/{boardFreeId}(boardFreeId=${boardFree.boardFreeId})}" method="post">
+        <input name="title" type="text" th:value="${boardFree.title}">
+        <textarea name="content" th:text="${boardFree.content}"></textarea>
+        <button type="submit">수정</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 페이지</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/header.css"/>
+</head>
+<body>
+<div th:replace="~{util/header :: header}"></div>
+<div>
+    <h1 th:text="${boardInquiry.title}"></h1>
+    <p th:text="${boardInquiry.content}"></p>
+    <a th:if="${userSession != null && userSession.userId == boardInquiry.user.userId}" th:href="@{/board/inquiry/delete(boardInquiryId=${boardInquiry.boardInquiryId})}">글삭제</a>
+    <a th:if="${userSession != null && userSession.userId == boardInquiry.user.userId}" th:href="@{/board/inquiry/modify/{boardInquiryId}(boardInquiryId=${boardInquiry.boardInquiryId})}">수정</a>
+</div>
+<div th:replace="~{util/footer :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>수정페이지</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/header.css"/>
+</head>
+<body>
+<div th:replace="~{util/header :: header}"></div>
+<div class="layout">
+    <form th:action="@{/board/prediction/update/{boardPredictionId}(boardPredictionId=${boardPrediction.boardPredictionId})}" method="post">
+        <input name="title" type="text" th:value="${boardPrediction.title}">
+        <textarea name="content" th:text="${boardPrediction.content}"></textarea>
+        <button type="submit">수정</button>
+    </form>
+</div>
+<div th:replace="~{util/footer :: footer}"></div>
+</body>
+</html>

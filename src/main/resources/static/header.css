@@ -1,0 +1,42 @@
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header button a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+header button a:hover {
+    color: #ffc107;
+}
+
+header div.menu {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+header div.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+header div.menu a:hover {
+    color: #ffc107;
+}

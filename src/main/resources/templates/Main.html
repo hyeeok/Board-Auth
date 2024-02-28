@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>메인 페이지</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/header.css"/>
+</head>
+<body>
+<div th:replace="~{util/header :: header}"></div>
+<div class="table-container">
+    <div class="games">
+        <h1>날짜별 경기 화면</h1>
+    </div>
+    <div class="analysis">
+        <h1>전문가 예측 화면</h1>
+    </div>
+</div>
+<div>
+    <table>
+        <thead>
+            <th>자유 게시판</th>
+        </thead>
+        <tbody>
+        <tr th:each="board : ${list}">
+            <td>[<span th:text="${board.user.userId}"></span>] <a th:text="${board.title}" th:href="'/board/free/view?boardFreeId=' + ${board.boardFreeId}"></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="~{util/footer :: footer}"></div>
+</body>
+</html>

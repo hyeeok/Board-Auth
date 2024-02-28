@@ -1,0 +1,37 @@
+body {
+    margin : 0;
+    overflow-x : hidden;
+}
+
+.analysis, .games {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.table-container {
+    display: flex;
+}
+
+.games {
+    margin-right: auto; /* 전문가 예측 화면을 오른쪽으로 위치 */
+    margin-left: 10px; /* 간격 조절 */
+}
+
+.table-container > div {
+    margin-right: 10px;
+}
+
+table {
+    width: 300px;
+    border: 1px solid #000; /* 겉 테두리 설정 */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 2px;
+    font-size: 15px;
+    border: none;
+}

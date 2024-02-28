@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>수정페이지</title>
+</head>
+<body>
+<div th:replace="~{util/header :: header}"></div>
+<div class="layout">
+    <form th:action="@{/board/inquiry/update/{boardInquiryId}(boardInquiryId=${boardInquiry.boardInquiryId})}" method="post">
+        <input name="title" type="text" th:value="${boardInquiry.title}">
+        <textarea name="content" th:text="${boardInquiry.content}"></textarea>
+        <button type="submit">수정</button>
+    </form>
+</div>
+<div th:replace="~{util/footer :: footer}"></div>
+</body>
+</html>

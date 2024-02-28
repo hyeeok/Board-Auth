@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header>
+    <div>
+        <div><h1><a th:href="@{/}">마사회 프로젝트</a></h1></div>
+        <div>
+            <div th:if="${session.userSession != null}">
+                <p th:text="'반갑습니다, ' + ${session.userSession.nickName} + '님!'"></p>
+                <button><a th:href="@{/logout}">로그아웃</a></button>
+            </div>
+            <div th:unless="${session.userSession != null}">
+                <button><a th:href="@{/login}">로그인</a></button>
+                <button><a th:href="@{/register}">회원가입</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <a th:href="@{/board/prediction}">예측 게시판</a>
+        <a th:href="@{/board/free}">자유 게시판</a>
+        <a th:href="@{/board/inquiry}">문의 게시판</a>
+    </div>
+</header>
+</body>
+</html>

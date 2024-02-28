@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 작성폼</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/header.css"/>
+</head>
+<body>
+<div th:replace="~{util/header :: header}"></div>
+<div class="layout">
+    <form action="/board/prediction/writepro" method="post">
+        <input name="title" type="text">
+        <textarea name="content"></textarea>
+        <button type="submit">작성</button>
+    </form>
+</div>
+<div th:replace="~{util/footer :: footer}"></div>
+</body>
+</html>
