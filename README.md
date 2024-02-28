@@ -1,1 +1,1 @@
-# Board-Auth
+커뮤니티 기능에 더불어 유저의 로그인과 세션 기능을 Spring boot로 구현
